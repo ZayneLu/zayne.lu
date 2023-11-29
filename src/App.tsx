@@ -10,8 +10,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<h4>home</h4>} />
-        <Route path="/l-system" element={<UiBundle />} />
+        <Route path="/">
+          <Route index element={<h4>home</h4>} />
+          <Route path="l-system" element={<UiBundle />} />
+        </Route>
       </Routes>
     </Router>
   );
