@@ -8,12 +8,12 @@ import { Canvas, useThree } from '@react-three/fiber';
 import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import Box from './models/Box';
-import Lighting from './models/Lighting';
-import Cylinder from './models/Cylinder';
 import Instructions, { DrawInstruction, Instruction } from '../logic/InstructionTypes';
 import SectionWrapper from './utilities/SectionWrapper';
 import { Token } from '../logic/LSystem';
+import Cylinder from './models/Cylinder';
+import Box from './models/Box';
+import Lighting from './models/Lighting';
 
 const degreesToRadiansFactor = Math.PI / 180;
 
