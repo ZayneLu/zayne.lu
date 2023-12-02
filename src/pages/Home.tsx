@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import envelope from 'assets/envelope.png';
-import gear from 'assets/gear.png';
-import resumeIcon from 'assets/resume icon.png';
+import gear from '../assets/gear.png';
+import resumeIcon from '../assets/resume icon.png';
+import envelope from '../assets/envelope.png';
 import useWindowSize from '../useWindowSize';
 
 function Home() {

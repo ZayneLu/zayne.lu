@@ -8,22 +8,20 @@ interface StateDisplayProps{
 
 function StateDisplay({ systemState }: StateDisplayProps) {
   return (
-    <div style={{ width: '50%' }}>
-      <SectionWrapper>
-        <div style={{
-          overflowX: 'auto', textAlign: 'left',
+    <SectionWrapper>
+      <div style={{
+        overflowX: 'auto', textAlign: 'left',
+      }}
+      >
+        <h3 style={{ display: 'inline', padding: '5px', whiteSpace: 'nowrap' }}>System State:</h3>
+        <span style={{
+          fontFamily: 'monospace', overflowX: 'auto', whiteSpace: 'nowrap', fontSize: '20pt',
         }}
         >
-          <h3 style={{ display: 'inline', padding: '5px', whiteSpace: 'nowrap' }}>System State:</h3>
-          <span style={{
-            fontFamily: 'monospace', overflowX: 'auto', whiteSpace: 'nowrap', fontSize: '20pt',
-          }}
-          >
-            {LSystem.toString(systemState)}
-          </span>
-        </div>
-      </SectionWrapper>
-    </div>
+          {LSystem.toString(systemState)}
+        </span>
+      </div>
+    </SectionWrapper>
   );
 }
 
