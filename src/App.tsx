@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Nav from './pages/Nav';
-import LSystemBundle from './l-system/components/LSystemBundle';
+import LSystem from './pages/projects/LSystem';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Navigate to="/projects/l-system" />} />
             <Route path="/l-system" element={<Navigate to="/projects/l-system" />} />
-            <Route path="/projects/l-system" element={<LSystemBundle />} />
+            <Route path="/projects/l-system" element={<LSystem />} />
           </Route>
         </Routes>
       </div>
