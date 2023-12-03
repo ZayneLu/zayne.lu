@@ -66,7 +66,7 @@ function Home() {
           <div className="thirdBlock" style={{ backgroundColor: '#5b245c', color: 'white', order: -1 }}>
             <h2 className="pbh"> Programming & Research </h2>
             <p className="block-cont pbh">
-              This website because I&apos;m interested in it. My research focus is on the history of programming languages and the development of conventions, but I&apos;m interested in far more than just that.
+              My research focus is on the history of programming languages and the development of conventions, but I&apos;m interested in far more than just that.
               <br />
               &nbsp; &nbsp;
               If you are a researcher, my
