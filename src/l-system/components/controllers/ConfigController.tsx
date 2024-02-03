@@ -14,9 +14,9 @@ interface ConfigControllerProps{
   setSystemState: Dispatch<SetStateAction<Token[]>>
 }
 
-function ConfigController({
+const ConfigController = ({
   setAxiom, setCameraPosition, setInstructions, setProductions, setSystemState,
-}: ConfigControllerProps) {
+}: ConfigControllerProps) => {
   const configs = {
     botanical: {
       shrub: configurations.shrub,
@@ -70,6 +70,6 @@ function ConfigController({
       </select>
     </SectionWrapper>
   );
-}
+};
 
 export default ConfigController;

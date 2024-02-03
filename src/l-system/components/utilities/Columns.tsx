@@ -4,12 +4,10 @@ interface ColumnsProps{
   children: ReactNode
 }
 
-function Columns({ children }: ColumnsProps) {
-  return (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {children}
-    </div>
-  );
-}
+const Columns = ({ children }: ColumnsProps) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    {children}
+  </div>
+);
 
 export default Columns;

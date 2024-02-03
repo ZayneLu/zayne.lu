@@ -24,15 +24,15 @@ interface InstructionNode{
 
 interface CellRenderProps{
   node: InstructionNode,
-  // eslint-disable-next-line react/no-unused-prop-types
+
   instructions: Instructions,
-  // eslint-disable-next-line react/no-unused-prop-types
+
   setInstructions: Dispatch<SetStateAction<Instructions>>
 }
 
-function AngleSelectorCell({
+const AngleSelectorCell = ({
   node, instructions, setInstructions, dimension,
-}: CellRenderProps & {dimension: number}) {
+}: CellRenderProps & {dimension: number}) => {
   const updateAngle = (newVal: string) => {
     const angle = parseFloat(newVal);
     const newInstructions = structuredClone(instructions);
@@ -63,9 +63,9 @@ function AngleSelectorCell({
       degrees
     </div>
   );
-}
+};
 
-function ShapeSelectorCell(props: CellRenderProps) {
+const ShapeSelectorCell = (props: CellRenderProps) => {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newShape = e.target.value as 'rectangle' | 'cylinder';
     const newInstructions = structuredClone(props.instructions);
@@ -85,11 +85,11 @@ function ShapeSelectorCell(props: CellRenderProps) {
       </select>
     </div>
   );
-}
+};
 
-function SizeSelectorCell({
+const SizeSelectorCell = ({
   node, instructions, setInstructions, dimension,
-}: CellRenderProps & {dimension: number}) {
+}: CellRenderProps & {dimension: number}) => {
   const thicknessLabel = node.params[0] === 'rectangle' ? 'thickness' : 'diameter';
 
   const updateDimension = (newVal: string) => {
@@ -122,9 +122,9 @@ function SizeSelectorCell({
 
     </div>
   );
-}
+};
 
-function ParameterRenderMethods(props: CellRenderProps & {column: number}) {
+const ParameterRenderMethods = (props: CellRenderProps & {column: number}) => {
   if (props.node.type === 'turn') {
     return <AngleSelectorCell {...props} dimension={props.column} />;
   }
@@ -141,9 +141,9 @@ function ParameterRenderMethods(props: CellRenderProps & {column: number}) {
   }
 
   return null;
-}
+};
 
-function SymbolCell({ node, instructions, setInstructions }: CellRenderProps) {
+const SymbolCell = ({ node, instructions, setInstructions }: CellRenderProps) => {
   const handleUpdate = (e: ChangeEvent<HTMLInputElement>) => {
     const newSymbol = e.target.value;
     if (newSymbol === node.symbol) { return; }
@@ -163,9 +163,9 @@ function SymbolCell({ node, instructions, setInstructions }: CellRenderProps) {
       maxLength={1}
     />
   );
-}
+};
 
-function TypeCell({ node, instructions, setInstructions }: CellRenderProps) {
+const TypeCell = ({ node, instructions, setInstructions }: CellRenderProps) => {
   const handleUpdate = (e: ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === instructions[node.symbol]![node.index].type) { return; }
     const newInstructions = structuredClone(instructions);
@@ -219,14 +219,13 @@ function TypeCell({ node, instructions, setInstructions }: CellRenderProps) {
       <option value="changeColor">change color</option>
     </select>
   );
-}
+};
 
-function RemoveCell({ node, instructions, setInstructions }: CellRenderProps) {
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        const newInstructions = structuredClone(instructions);
+const RemoveCell = ({ node, instructions, setInstructions }: CellRenderProps) => (
+  <button
+    type="button"
+    onClick={() => {
+      const newInstructions = structuredClone(instructions);
         newInstructions[node.symbol]!.splice(node.index, 1);
 
         Object.keys(newInstructions).forEach((key) => {
@@ -236,17 +235,14 @@ function RemoveCell({ node, instructions, setInstructions }: CellRenderProps) {
         });
 
         setInstructions(newInstructions);
-      }}
-      style={{ backgroundColor: 'salmon', color: 'white' }}
-    >
-      X
-    </button>
-  );
-}
+    }}
+    style={{ backgroundColor: 'salmon', color: 'white' }}
+  >
+    X
+  </button>
+);
 
-function InstructionController(
-  { instructions, setInstructions }: SymbolInterpretationControllerProps,
-) {
+const InstructionController = ({ instructions, setInstructions }: SymbolInterpretationControllerProps) => {
   const theme = useTheme(getTheme());
 
   const cellProps = { instructions, setInstructions };
@@ -322,6 +318,6 @@ function InstructionController(
       </div>
     </SectionWrapper>
   );
-}
+};
 
 export default InstructionController;

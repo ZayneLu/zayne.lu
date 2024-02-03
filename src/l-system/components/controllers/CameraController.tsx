@@ -22,7 +22,7 @@ const cellStyle = {
   width: '100%',
 };
 
-function CameraController({ position, setPosition }: CameraControllerProps) {
+const CameraController = ({ position, setPosition }: CameraControllerProps) => {
   const theme = useTheme(getTheme());
 
   const columns = [{
@@ -71,6 +71,6 @@ function CameraController({ position, setPosition }: CameraControllerProps) {
       <CompactTable columns={columns} data={{ nodes: [{ position }] }} theme={theme} />
     </SectionWrapper>
   );
-}
+};
 
 export default CameraController;

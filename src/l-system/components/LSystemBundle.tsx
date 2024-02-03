@@ -1,4 +1,3 @@
-/* eslint-disable quote-props */
 import { useState } from 'react';
 import * as LSystem from '../logic/LSystem';
 import RendererFrame from './RendererFrame';
@@ -13,7 +12,7 @@ import configurations from '../logic/configurtations/configurations';
 import ConfigController from './controllers/ConfigController';
 import '../lsystem.css';
 
-function LSystemBundle() {
+const LSystemBundle = () => {
   const defaultConfig = configurations.blank;
 
   const [axiom, setAxiom] = useState(defaultConfig.axiom);
@@ -50,6 +49,6 @@ function LSystemBundle() {
       <CameraController position={cameraPosition} setPosition={setCameraPosition} />
     </div>
   );
-}
+};
 
 export default LSystemBundle;

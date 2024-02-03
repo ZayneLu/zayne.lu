@@ -1,19 +1,19 @@
 import resumePdf from '../assets/Resume.pdf';
-import useWindowSize from '../useWindowSize';
 
-function Resume() {
-  const windowSize = useWindowSize();
+const Resume = () => {
   document.querySelector('body')?.setAttribute('style', 'background-color: #ecd29a;');
   return (
-    <div id="content" style={{ ...windowSize }}>
-      <object
-        style={{ height: '1000px' }}
-        data={resumePdf}
-        type="application/pdf"
-        title="My résumé"
-      />
-    </div>
+    <main id="resume">
+      <section id="resume">
+        <object
+          style={{ width: '90%', height: '85%' }}
+          data={resumePdf}
+          type="application/pdf"
+          title="My résumé"
+        />
+      </section>
+    </main>
   );
-}
+};
 
 export default Resume;

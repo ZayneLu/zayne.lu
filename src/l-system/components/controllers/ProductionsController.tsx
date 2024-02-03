@@ -26,7 +26,7 @@ interface CellRenderProps{
   setProductions: Dispatch<SetStateAction<Productions>>
 }
 
-function SuccessorCell({ node, productions, setProductions }: CellRenderProps) {
+const SuccessorCell = ({ node, productions, setProductions }: CellRenderProps) => {
   const handleUpdate = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === productions[node.symbol]![node.index].successor) { return; }
     const newProductions = structuredClone(productions);
@@ -40,9 +40,9 @@ function SuccessorCell({ node, productions, setProductions }: CellRenderProps) {
       onChange={handleUpdate}
     />
   );
-}
+};
 
-function SymbolCell({ node, productions, setProductions }: CellRenderProps) {
+const SymbolCell = ({ node, productions, setProductions }: CellRenderProps) => {
   const handleUpdate = (newSymbol: string) => {
     if (newSymbol === node.symbol) { return; }
 
@@ -61,9 +61,9 @@ function SymbolCell({ node, productions, setProductions }: CellRenderProps) {
       maxLength={1}
     />
   );
-}
+};
 
-function WeightCell({ node, productions, setProductions }: CellRenderProps) {
+const WeightCell = ({ node, productions, setProductions }: CellRenderProps) => {
   const handleUpdate = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === productions[node.symbol]![node.index].weight.toString()) {
       return;
@@ -83,14 +83,13 @@ function WeightCell({ node, productions, setProductions }: CellRenderProps) {
       onChange={handleUpdate}
     />
   );
-}
+};
 
-function RemoveCell({ node, productions, setProductions }: CellRenderProps) {
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        const newProductions = structuredClone(productions);
+const RemoveCell = ({ node, productions, setProductions }: CellRenderProps) => (
+  <button
+    type="button"
+    onClick={() => {
+      const newProductions = structuredClone(productions);
       newProductions[node.symbol]!.splice(node.index, 1);
 
       Object.keys(newProductions).forEach((key) => {
@@ -100,15 +99,14 @@ function RemoveCell({ node, productions, setProductions }: CellRenderProps) {
       });
 
       setProductions(newProductions);
-      }}
-      style={{ backgroundColor: 'salmon', color: 'white' }}
-    >
-      X
-    </button>
-  );
-}
+    }}
+    style={{ backgroundColor: 'salmon', color: 'white' }}
+  >
+    X
+  </button>
+);
 
-function ProductionsController({ productions, setProductions }: ProductionsControllerProps) {
+const ProductionsController = ({ productions, setProductions }: ProductionsControllerProps) => {
   const theme = useTheme(getTheme());
 
   const cellProps = { productions, setProductions };
@@ -158,6 +156,6 @@ function ProductionsController({ productions, setProductions }: ProductionsContr
       </div>
     </SectionWrapper>
   );
-}
+};
 
 export default ProductionsController;

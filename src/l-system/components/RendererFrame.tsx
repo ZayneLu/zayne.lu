@@ -120,7 +120,7 @@ interface LinkProps{
   setRenderer: React.Dispatch<React.SetStateAction<THREE.WebGLRenderer | undefined>>
   position : THREE.Vector3
 }
-function Links({ setRenderer, position }: LinkProps) {
+const Links = ({ setRenderer, position }: LinkProps) => {
   const root = useThree();
   useEffect(() => {
     attachCameraToCanvas(root.camera, root.gl);
@@ -128,7 +128,7 @@ function Links({ setRenderer, position }: LinkProps) {
     root.camera.position.set(position.x, position.y, position.z);
   }, [position]);
   return null;
-}
+};
 
 function handleInstruction(
   instruction: Instruction,
@@ -160,7 +160,7 @@ function handleInstruction(
   }
 }
 
-function RendererFrame({ state, instructions, position }: FrameProps) {
+const RendererFrame = ({ state, instructions, position }: FrameProps) => {
   const [renderer, setRenderer] = useState<THREE.WebGLRenderer>();
   const windowSize = useWindowSize();
 
@@ -198,6 +198,6 @@ function RendererFrame({ state, instructions, position }: FrameProps) {
       <button type="button" onClick={() => saveImage(renderer)}>download</button>
     </SectionWrapper>
   );
-}
+};
 
 export default RendererFrame;

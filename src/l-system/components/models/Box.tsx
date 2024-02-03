@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-unknown-property */
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
@@ -9,7 +8,7 @@ interface BoxProps{
   rotation: [x: number, y: number, z: number];
 }
 
-function Box({ position, dimensions, rotation }: BoxProps) {
+const Box = ({ position, dimensions, rotation }: BoxProps) => {
   const meshRef = useRef<THREE.Mesh>(null!);
   const [hovered, setHover] = useState(false);
   return (
@@ -25,6 +24,6 @@ function Box({ position, dimensions, rotation }: BoxProps) {
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
-}
+};
 
 export default Box;

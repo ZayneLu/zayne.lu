@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/no-unknown-property */
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
@@ -9,7 +8,7 @@ interface CylinderProps{
   rotation: [x: number, y: number, z: number];
 }
 
-function Cylinder({ position, dimensions, rotation }: CylinderProps) {
+const Cylinder = ({ position, dimensions, rotation }: CylinderProps) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const [hovered, setHover] = useState(false);
 
@@ -26,6 +25,6 @@ function Cylinder({ position, dimensions, rotation }: CylinderProps) {
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
     </mesh>
   );
-}
+};
 
 export default Cylinder;

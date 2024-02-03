@@ -1,7 +1,5 @@
 import LSystemBundle from '../../l-system/components/LSystemBundle';
 
-function LSystem() {
-  return <LSystemBundle />;
-}
+const LSystem = () => <LSystemBundle />;
 
 export default LSystem;

@@ -16,21 +16,19 @@ const cellStyle = {
   width: '20ch',
 };
 
-function AxiomController({ axiom, setAxiom }: AxiomControllerProps) {
-  return (
-    <SectionWrapper>
-      <div>
-        <h3 style={{ display: 'inline', padding: '5px' }}>Axiom:</h3>
-        <input
-          type="text"
-          style={cellStyle}
-          value={axiom}
-          onChange={(e) => setAxiom(e.target.value)}
-        />
-      </div>
+const AxiomController = ({ axiom, setAxiom }: AxiomControllerProps) => (
+  <SectionWrapper>
+    <div>
+      <h3 style={{ display: 'inline', padding: '5px' }}>Axiom:</h3>
+      <input
+        type="text"
+        style={cellStyle}
+        value={axiom}
+        onChange={(e) => setAxiom(e.target.value)}
+      />
+    </div>
 
-    </SectionWrapper>
-  );
-}
+  </SectionWrapper>
+);
 
 export default AxiomController;

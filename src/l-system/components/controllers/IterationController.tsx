@@ -11,9 +11,9 @@ interface ControlsProps{
   axiom: string
 }
 
-function IterationController({
+const IterationController = ({
   systemState, setSystemState, productions, axiom, instructions,
-}: ControlsProps) {
+}: ControlsProps) => {
   const [isGrowEnabled, setIsGrowEnabled] = useState(false);
   const [duration, setDuration] = useState(3);
   const [desiredFps, setDesiredFps] = useState(30);
@@ -135,5 +135,5 @@ function IterationController({
       </div>
     </SectionWrapper>
   );
-}
+};
 export default IterationController;
