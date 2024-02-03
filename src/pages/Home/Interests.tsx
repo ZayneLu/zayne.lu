@@ -5,6 +5,7 @@ type Interest = {
 
 const Interests = ({ interests }: {interests: Interest[]}) => (
   <section id="interests">
+    <div className="triangleLeft" />
     <h2> I&apos;d like to talk to you about...</h2>
     <div id="container">
       {interests.map((interest) => (
