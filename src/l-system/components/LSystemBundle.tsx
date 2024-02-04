@@ -23,11 +23,11 @@ const LSystemBundle = () => {
     LSystem.stringToLSystemTokenList(defaultConfig.axiom, 1),
   );
 
-  document.querySelector('body')?.setAttribute('style', 'background-color: white;');
+  document.querySelector('body')?.setAttribute('style', 'background-color: #1c3242;');
   return (
-    <div style={{ all: 'initial' }}>
-      <Columns>
-        <div style={{ width: '20%' }}>
+    <main style={{ all: 'initial', fontSize: '.8rem' }}>
+      <section>
+        <Columns>
           <ConfigController
             {...{
               setAxiom, setProductions, setInstructions, setCameraPosition, setSystemState,
@@ -39,15 +39,15 @@ const LSystemBundle = () => {
               productions, axiom, systemState, setSystemState, instructions,
             }}
           />
-        </div>
-        <ProductionsController productions={productions} setProductions={setProductions} />
-        <InstructionController instructions={instructions} setInstructions={setInstructions} />
-      </Columns>
+          <ProductionsController productions={productions} setProductions={setProductions} />
+          <InstructionController instructions={instructions} setInstructions={setInstructions} />
+        </Columns>
 
-      <StateDisplay systemState={systemState} />
-      <RendererFrame state={systemState} instructions={instructions} position={cameraPosition} />
-      <CameraController position={cameraPosition} setPosition={setCameraPosition} />
-    </div>
+        <StateDisplay systemState={systemState} />
+        <RendererFrame state={systemState} instructions={instructions} position={cameraPosition} />
+        <CameraController position={cameraPosition} setPosition={setCameraPosition} />
+      </section>
+    </main>
   );
 };
 

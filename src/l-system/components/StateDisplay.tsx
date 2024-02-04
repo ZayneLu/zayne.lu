@@ -9,12 +9,15 @@ interface StateDisplayProps{
 const StateDisplay = ({ systemState }: StateDisplayProps) => (
   <SectionWrapper>
     <div style={{
-      overflowX: 'auto', textAlign: 'left',
+      overflowX: 'auto', overflowY: 'hidden', textAlign: 'left',
     }}
     >
       <h3 style={{ display: 'inline', padding: '5px', whiteSpace: 'nowrap' }}>System State:</h3>
       <span style={{
-        fontFamily: 'monospace', overflowX: 'auto', whiteSpace: 'nowrap', fontSize: '20pt',
+        fontFamily: 'monospace',
+        overflowX: 'auto',
+        whiteSpace: 'nowrap',
+        fontSize: '14pt',
       }}
       >
         {LSystem.toString(systemState)}

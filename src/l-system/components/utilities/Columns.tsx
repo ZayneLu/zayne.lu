@@ -5,7 +5,7 @@ interface ColumnsProps{
 }
 
 const Columns = ({ children }: ColumnsProps) => (
-  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+  <div style={{ display: 'flex', flexWrap: 'wrap', alignContent: 'center' }}>
     {children}
   </div>
 );

@@ -38,6 +38,8 @@ const SuccessorCell = ({ node, productions, setProductions }: CellRenderProps) =
     <input
       value={node.successor}
       onChange={handleUpdate}
+      style={{ width: '12ch' }}
+      maxLength={20}
     />
   );
 };

@@ -6,7 +6,12 @@ interface SectionWrapperProps{
 
 const SectionWrapper = ({ children }: SectionWrapperProps) => (
   <div style={{
-    border: '1px solid black', padding: '10px', margin: '10px', textAlign: 'left',
+    border: '1px solid gray',
+    backgroundColor: 'white',
+    padding: '10px',
+    margin: '10px',
+    textAlign: 'left',
+    borderRadius: '4px',
   }}
   >
     {children}

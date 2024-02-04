@@ -59,8 +59,7 @@ const AngleSelectorCell = ({
         style={{ width: '8ch' }}
         onChange={(e) => updateAngle(e.target.value)}
       />
-      {' '}
-      degrees
+      °
     </div>
   );
 };
